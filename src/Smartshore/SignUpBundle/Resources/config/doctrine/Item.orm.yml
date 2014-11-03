@@ -1,0 +1,32 @@
+Smartshore\SignUpBundle\Entity\Item:
+    type: entity
+    table: null
+    repositoryClass: Smartshore\SignUpBundle\Entity\ItemRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        itemName:
+            type: string
+            length: 255
+            column: ItemName
+        itemStatus:
+            type: integer
+            column: ItemStatus
+        listOrder:
+            type: string
+            column: ListOrder
+        itemColor:
+            type: string
+            column: ItemColor
+    manyToOne:
+        lists:
+            targetEntity: Lists
+            inversedBy: item
+            joinColumn:
+                name: list_id
+                referencedColumnName: id
+    lifecycleCallbacks: {  }

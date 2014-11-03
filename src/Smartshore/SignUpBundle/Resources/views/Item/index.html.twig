@@ -1,0 +1,59 @@
+{# extends '::base.html.twig' #}
+
+{% block body -%}
+    {#<h1>Item list</h1>#}
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                {#<th>Id</th>#}
+                <th>Itemname</th>
+                {#<th>Itemstatus</th>#}
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                {#<td><a href="{{ path('item_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>#}
+                <td style="color:#{{ entity.ItemColor }}">{{ entity.itemName }}</td>
+                {#<td>{{ entity.itemStatus }}</td>#}
+                <td>
+                <ul>
+                    {#<li>
+                        <a href="{{ path('item_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('item_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>#}
+                    <li>
+                        <a href="{{ path('item_del', { 'id': entity.id }) }}"><img src="{{ asset('bundles/smartshoresignup/images/Close.png') }}" /></a>
+                    </li>
+                    
+                </ul>
+                </td>
+            </tr>
+
+        {% endfor %}
+        {% for entity in entities1 %}
+            <tr>
+                <td style="color:#{{ entity.ItemColor }}">{{ entity.itemName }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('item_del', { 'id': entity.id }) }}"><img src="{{ asset('bundles/smartshoresignup/images/Close.png') }}" /></a>
+                        </li>
+
+                    </ul>
+                </td>
+            </tr>
+
+        {% endfor %}
+        <tr>
+            <td>   <!--<a href="{# path('item_new', { 'list_id': list_id }) #}">Add Item</a>-->
+                <a href="javascript:void(0);" class="addnewitem" data-value="{{ list_id }}">Add Item</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+{% endblock %}

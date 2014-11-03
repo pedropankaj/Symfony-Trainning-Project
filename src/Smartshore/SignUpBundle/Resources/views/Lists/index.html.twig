@@ -1,0 +1,51 @@
+{% extends '::base.html.twig' %}
+{% block body -%}
+    <div class="">Welcome  <a href="{{ path("userlogout") }}">Logout</a></div>
+    <h1>Lists list</h1>
+
+{#    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Listname</th>
+                <th>Liststatus</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('lists_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.listName }}</td>
+                <td>{{ entity.listStatus }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('lists_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('lists_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+#}
+
+    <a href="javascript:void(0);" class="addnewlist">Add List</a>
+             <!-- <a href="{# path('lists_new') #}">Add New List</a>-->
+	
+	<div class="list_maincontainer">
+        {% for entity in entities %}
+        <div class="list_container">
+            <p class="listtitle">
+                {{ entity.listName }}
+                {{ render(controller('SmartshoreSignUpBundle:Item:index',{ 'id':entity.id })) }}
+                <a href="{{ path('lists_delete', { 'id': entity.id }) }}">Delete List</a>
+            </p>
+        </div>
+        {% endfor %}
+    </div>
+    {% endblock %}

@@ -1,0 +1,24 @@
+Smartshore\SignUpBundle\Entity\Lists:
+    type: entity
+    table: null
+    repositoryClass: Smartshore\SignUpBundle\Entity\ListsRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        listName:
+            type: string
+            length: 255
+            column: ListName
+        listStatus:
+            type: integer
+            column: ListStatus
+    oneToMany:
+        item:
+            targetEntity: Item
+            mappedBy: lists
+            cascade: ["persist","remove"]
+    lifecycleCallbacks: {  }

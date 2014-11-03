@@ -1,0 +1,38 @@
+item:
+    path:     /
+    defaults: { _controller: "SmartshoreSignUpBundle:Item:index" }
+
+item_show:
+    path:     /{id}/show
+    defaults: { _controller: "SmartshoreSignUpBundle:Item:show" }
+
+item_new:
+    path:     /new/{list_id}
+    defaults: { _controller: "SmartshoreSignUpBundle:Item:new" }
+item_create:
+    path:     /create
+    defaults: { _controller: "SmartshoreSignUpBundle:Item:create" }
+    requirements: { _method: post }
+
+item_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "SmartshoreSignUpBundle:Item:edit" }
+
+item_update:
+    path:     /{id}/update
+    defaults: { _controller: "SmartshoreSignUpBundle:Item:update" }
+    requirements: { _method: post|put }
+
+item_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "SmartshoreSignUpBundle:Item:delete" }
+    requirements: { _method: get|delete| }
+    
+    
+item_del:
+    path:    /delete/{id}
+    defaults: { _controller:"SmartshoreSignUpBundle:Item:deleteItem" }
+    
+#list_item:
+    #path: /{list_id}
+    #defaults: { _controller:"SmartshoreSignUpBundle:Item:listItem" }

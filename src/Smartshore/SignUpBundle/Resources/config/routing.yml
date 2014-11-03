@@ -1,0 +1,9 @@
+smartshore_sign_up_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: SmartshoreSignUpBundle:Default:index }
+SmartshoreSignUpBundle_lists:
+    resource: "@SmartshoreSignUpBundle/Resources/config/routing/lists.yml"
+    prefix:   /lists
+SmartshoreSignUpBundle_item:
+    resource: "@SmartshoreSignUpBundle/Resources/config/routing/item.yml"
+    prefix:   /item

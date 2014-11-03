@@ -1,0 +1,7 @@
+parameters:
+#    smartshore_sign_up.example.class: Smartshore\SignUpBundle\Example
+
+services:
+#    smartshore_sign_up.example:
+#        class: %smartshore_sign_up.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,0 +1,7 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Go to <a href="{{ path("login") }}">Login Page</a></h1>
+    <h1>Not an Account...? Sign Up Here...</h1>
+    {{ form(form) }}
+{% endblock %}
